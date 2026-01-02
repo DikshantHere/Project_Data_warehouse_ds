@@ -12,8 +12,8 @@ ___
 * Data Modeling: Developing fact and dimension tables optimized for analytical queries.
 * Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
 ___
-## High lavel Architecture
-![HLAimg]()
+## High level Architecture
+![HLAimg](https://github.com/DikshantHere/Project_Data_warehouse_ds/blob/c428d7bb27738d9159a55363012e6d22ad845d2c/docs/High%20level%20Arhitect%20by%20dikshant%20.drawio.png)
 
 ### 🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
 
