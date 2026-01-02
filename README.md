@@ -13,7 +13,7 @@ ___
 * Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
 ___
 ## High lavel Architecture
-![HLAimg]()
+![HLAimg](https://github.com/DikshantHere/Project_Data_warehouse_ds/blob/7530bba995aa21f1d8e52d21bc5b31161792903b/docs/High%20lavel%20Arhitect%20by%20dikshant%20.drawio.png)
 
 ### 🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
 
