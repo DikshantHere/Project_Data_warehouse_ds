@@ -21,7 +21,7 @@ IF OBJECT_ID ('bronze.crm_cust_info','U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.crm_cust_info (
-	cst_id INT PRIMARY KEY NOT NULL
+	cst_id INT 
 	,cst_key NVARCHAR(50) 
 	,cst_firstname NVARCHAR(50)
 	,cst_lastname NVARCHAR(50)
@@ -42,7 +42,7 @@ IF OBJECT_ID ('bronze.crm_prd_info','U') IS NOT NULL
 	END;
 GO
 CREATE TABLE bronze.crm_prd_info (
-	prd_id INT PRIMARY KEY NOT NULL
+	prd_id INT 
 	,prd_key NVARCHAR(50) 
 	,prd_nm NVARCHAR(50)
 	,prd_cost  INT
@@ -84,7 +84,7 @@ IF OBJECT_ID ('bronze.erp_CUST_AZ12','U') IS NOT NULL
 	END;
 GO 
 CREATE TABLE bronze.erp_CUST_AZ12(
-	CID NVARCHAR (50) PRIMARY KEY NOT NULL
+	CID NVARCHAR (50) 
 	,BDATE DATE
 	,GEN NVARCHAR (50)
 )
@@ -100,7 +100,7 @@ IF OBJECT_ID ('bronze.erp_LOC_A101','U') IS NOT NULL
 	END;
 GO
 CREATE TABLE bronze.erp_LOC_A101(
-	CID NVARCHAR(50) PRIMARY KEY NOT NULL
+	CID NVARCHAR(50)
 	,CNTRY NVARCHAR(50)
 )
 PRINT '05 NEW bronze.erp_LOC_A101 IS CREATED '
@@ -115,7 +115,7 @@ IF OBJECT_ID ('bronze.erp_PX_CAT_G1V2','U') IS NOT NULL
 	END;
 GO
 CREATE TABLE bronze.erp_PX_CAT_G1V2(
-	ID NVARCHAR(50) PRIMARY KEY 
+	ID NVARCHAR(50) 
 	,CAT NVARCHAR(50)
 	,SUBCAT NVARCHAR(50)
 	,MAINTENANCE NVARCHAR(10)
