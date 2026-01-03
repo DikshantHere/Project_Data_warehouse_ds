@@ -1,0 +1,125 @@
+/*
+This script is used to create table for the data set from the source crm and erp .
+this script make sure to delete the old table named 
+bronze.crm_cust_info 
+,bronze.crm_prd_info 
+,bronze.crm_sales_details
+,bronze.erp_CUST_AZ12,
+bronze.erp_LOC_A101
+,bronze.erp_PX_CAT_G1V2  and create them again with new constraints and data type 
+
+*/
+USE warehouse_project;
+GO
+
+IF OBJECT_ID ('bronze.crm_cust_info','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.crm_cust_info
+		PRINT 'EXISTING bronze.crm_cust_info  TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO
+
+CREATE TABLE bronze.crm_cust_info (
+	cst_id INT PRIMARY KEY NOT NULL
+	,cst_key NVARCHAR(50) 
+	,cst_firstname NVARCHAR(50)
+	,cst_lastname NVARCHAR(50)
+	,cst_marital_status NVARCHAR(10)
+	,cst_gndr NVARCHAR(10)
+	,cst_create_date DATE
+)
+PRINT '01 NEW bronze.crm_cust_info TABLE CREATED '
+PRINT '===================================='
+;
+GO
+
+IF OBJECT_ID ('bronze.crm_prd_info','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.crm_prd_info 
+		PRINT 'EXISTING bronze.crm_prd_info  TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO
+CREATE TABLE bronze.crm_prd_info (
+	prd_id INT PRIMARY KEY NOT NULL
+	,prd_key NVARCHAR(50) 
+	,prd_nm NVARCHAR(50)
+	,prd_cost  INT
+	,prd_line NVARCHAR(10)
+	,prd_start_dt DATE
+	,prd_end_dt DATE
+)
+PRINT '02 NEW bronze.crm_prd_info  TABLE CREATED '
+PRINT '====================================';
+GO
+
+IF OBJECT_ID ('bronze.crm_sales_details','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.crm_sales_details
+		PRINT 'EXISTING bronze.crm_sales_details TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO
+CREATE TABLE bronze.crm_sales_details(
+	sls_ord_num NVARCHAR(50) 
+	,sls_prd_key NVARCHAR(50) 
+	,sls_cust_id INT 
+	,sls_order_dt INT
+	,sls_ship_dt INT
+	,sls_due_dt INT
+	,sls_sales INT
+	,sls_quantity INT
+	,sls_price INT
+)
+PRINT '03 NEW bronze.crm_sales_details TABLE CREATED '
+PRINT '====================================';
+GO
+
+IF OBJECT_ID ('bronze.erp_CUST_AZ12','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.erp_CUST_AZ12
+		PRINT 'EXISTING bronze.erp_CUST_AZ12 TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO 
+CREATE TABLE bronze.erp_CUST_AZ12(
+	CID NVARCHAR (50) PRIMARY KEY NOT NULL
+	,BDATE DATE
+	,GEN NVARCHAR (50)
+)
+PRINT '04 NEW bronze.erp_CUST_AZ12 TABLE CREATED '
+PRINT '====================================';
+GO 
+
+IF OBJECT_ID ('bronze.erp_LOC_A101','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.erp_LOC_A101
+		PRINT 'EXISTING bronze.erp_LOC_A101 TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO
+CREATE TABLE bronze.erp_LOC_A101(
+	CID NVARCHAR(50) PRIMARY KEY NOT NULL
+	,CNTRY NVARCHAR(50)
+)
+PRINT '05 NEW bronze.erp_LOC_A101 IS CREATED '
+PRINT '====================================';
+GO
+
+IF OBJECT_ID ('bronze.erp_PX_CAT_G1V2','U') IS NOT NULL
+	BEGIN 
+		DROP TABLE bronze.erp_PX_CAT_G1V2
+		PRINT 'EXISTING bronze.erp_PX_CAT_G1V2 TABLE DELETED '
+		PRINT '--------------------------------------------'
+	END;
+GO
+CREATE TABLE bronze.erp_PX_CAT_G1V2(
+	ID NVARCHAR(50) PRIMARY KEY 
+	,CAT NVARCHAR(50)
+	,SUBCAT NVARCHAR(50)
+	,MAINTENANCE NVARCHAR(10)
+)
+PRINT '06 NEW bronze.erp_PX_CAT_G1V2 TABLE CREATED '
+PRINT '====================================';
+GO
