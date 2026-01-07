@@ -99,23 +99,7 @@ WHERE  sls_cust_id NOT IN  ( SELECT
  cst_id
 FROM silver.crm_cust_info) 
 
---CHECKING for valid sls_order_dt and sls_ship_date not less then  0 and have 8 char for changing the dtype to date
 -- and order date is less then ship date
-SELECT
-sls_order_dt
-FROM silver.crm_sales_details 
-WHERE sls_order_dt <=0 OR LEN(sls_order_dt ) != 8;
-
-SELECT
-sls_ship_dt
-FROM silver.crm_sales_details 
-WHERE sls_ship_dt <=0 OR LEN(sls_ship_dt ) != 8; 
-
-SELECT
-sls_due_dt 
-FROM silver.crm_sales_details 
-WHERE sls_due_dt <=0 OR LEN(sls_due_dt  ) != 8; 
-
 
 SELECT 
 *
