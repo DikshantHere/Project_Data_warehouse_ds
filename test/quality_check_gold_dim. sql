@@ -1,0 +1,27 @@
+--quality check on gold layer dim
+-- dim_cust quality check 
+-- checking for duplicate id in the gold.dim_customer
+SELECT 
+customer_id
+,count(*)
+FROM gold.dim_customer
+GROUP BY customer_id
+HAVING count(*) > 1
+
+-- check for distinct gender 
+SELECT 
+DISTINCT Gender
+FROM gold.dim_customer
+
+-- quality check after the data integration and inrichment in gold.dim_product
+
+SELECT 
+product_id
+FROM gold.dim_products
+GROUP BY product_id
+HAVING count(*) > 1
+;
+-- CHECKING FOR DISTINCT catogary
+SELECT 
+DISTINCT product_catogary
+FROM gold.dim_products
